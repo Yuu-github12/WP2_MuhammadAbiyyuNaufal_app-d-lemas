@@ -45,7 +45,7 @@
             <table class="table table-bordered" id="myTable">
               <thead>
                 <tr>
-                  <!-- Buat table heading untuk No, Nama, NIS, Kelas, Tanggal Lahir, Tempat Lahir, Alamat, Jenis Kelamin, Agama -->
+                  <!-- Buat table heading untuk No, Nama, NISN,Kelas, Tanggal Lahir, Tempat Lahir, Alamat, Jenis Kelamin, Agama -->
                   <th>No</th>
                   <th>Nama</th>
                   <th>NIS</th>
@@ -55,6 +55,7 @@
                   <th>Alamat</th>
                   <th>Jenis Kelamin</th>
                   <th>Agama</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,7 +76,16 @@
                     <td><?php echo $siswa->alamat ?></td>
                     <td><?php echo $siswa->jenis_kelamin ?></td>
                     <td><?php echo $siswa->agama ?></td>
-                    
+                    <td class="text-center">
+                    <a href="<?php echo base_url() ?>index.php/siswa/hapus/<?php echo $siswa->id ?>" class="btn btn-sm" style="display: flex; background-color: red;">
+                      <span>
+                        <i class="fa fa-trash"></i>
+                      </span>
+                      <span style="margin-left: 5px;">
+                        HAPUS
+                      </span>
+                    </a>
+                  </td>
                   </tr>
                 <?php } ?>
               </tbody>

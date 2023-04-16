@@ -38,7 +38,7 @@ body {
         </div>
 
           <div class="card-body">
-            <form action="<?php echo base_url() ?>index.php/siswa/simpan" method="POST">
+          <form action="<?php echo base_url() ?>index.php/siswa/simpan" method="POST" name="myForm" onsubmit="return validateForm()">
 
               <div class="form-group">
                 <label>Masukan NIS</label>
@@ -112,5 +112,57 @@ body {
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+  function validateForm() {
+    var nis = document.forms["myForm"]["nis"].value;
+    var nama = document.forms["myForm"]["nama"].value;
+    var kelas = document.forms["myForm"]["kelas"].value;
+    var tanggal_lahir = document.forms["myForm"]["tanggal_lahir"].value;
+    var tempat_lahir = document.forms["myForm"]["tempat_lahir"].value;
+    var jenis_kelamin = document.forms["myForm"]["jenis_kelamin"].value;
+    var agama = document.forms["myForm"]["agama"].value;
+    var alamat = document.forms["myForm"]["alamat"].value;
+
+    if (nis == "") {
+      alert("NIS harus diisi");
+      return false;
+    }
+
+    if (nama == "") {
+      alert("Nama harus diisi");
+      return false;
+    }
+
+    if (kelas == "") {
+      alert("Kelas harus dipilih");
+      return false;
+    }
+
+    if (tanggal_lahir == "") {
+      alert("Tanggal Lahir harus diisi");
+      return false;
+    }
+
+    if (tempat_lahir == "") {
+      alert("Tempat Lahir harus diisi");
+      return false;
+    }
+
+    if (jenis_kelamin == "") {
+      alert("Jenis Kelamin harus dipilih");
+      return false;
+    }
+
+    if (agama == "") {
+      alert("Agama harus dipilih");
+      return false;
+    }
+
+    if (alamat == "") {
+      alert("Alamat harus diisi");
+      return false;
+    }
+  }
+</script>
 </body>
 </html>
